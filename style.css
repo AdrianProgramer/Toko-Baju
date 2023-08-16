@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    margin: 50px;
+    background-color: #ddd;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    display: grid;
+    grid-template-areas: 'hero hero f1' 'hero hero f2';
+}
+
+.hero {
+    grid-area: hero;
+    background-image: url(img/gambar.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 350px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.hero > * {
+    display: none;
+}
+
+.features {
+
+    background-color: black;
+    display: grid;
+    place-content: center center;
+    color: white;
+}
+
+.f1 {
+    grid-area: f1;
+    background-image: url('http://upoker.shop/images/thumbs/0000316_fish-tank-hoodie_550.jpeg');
+    background-size: cover;
+    background-position: center;
+    min-height: 150px;
+}
+
+.f2 {
+    grid-area: f2;
+    background-image: url('http://upoker.shop/images/thumbs/0000351_signature-hoodie_550.jpeg');
+    background-size: cover;
+    background-position: center;
+    min-height: 150px;
+
+}
+
+.container {
+    display: grid;
+}
+
+.menu {
+    text-transform: uppercase;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+}
+
+.menu .list-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    list-style: none;
+    align-content: center;
+    gap: 10px;
+}
+
+.menu .list-menu > * {
+    display: block;
+    text-align: center;
+}
+
+.menu > .list-menu > * {
+    text-transform: capitalize;
+    background-color: black;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.menu .list-menu li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-rows: minmax(150px, 1fr);
+    gap: 10px;
+    justify-items: center;
+    align-content: center;
+    padding: 10px;
+}
+
+.card {
+    background-color: white;
+}
+
+.card > .paraf > * {
+    margin: 10px;
+}
+
+.card img {
+    height: 500px;
+}
+
+.card h3 {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    width: 150px;
+    box-sizing: border-box;
+    border-radius: 5%;
+}
+
+.paraf {
+    padding: 10px;
+}
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    .header {
+        display: grid;
+        grid-template-areas: 'hero hero hero' 'f1 f2 f2';
+        order: 2;
+    }
+
+    .f1 {
+        background-position: unset;
+        background-repeat: no-repeat;
+        
+    }
+
+    .f2 {
+        background-position: unset;
+        background-repeat: no-repeat;
+    }
+
+    .menu {
+        display: grid;
+        grid-template-rows: 1fr 150px;
+        grid-template-columns: none;
+        text-align: center;
+        order: 1;
+    }
+
+    .menu .list-menu {
+        grid-template-columns: none;
+    }
+
+    .card-list {
+        order: 3;
+        grid-template-columns: none;
+    }
+}
